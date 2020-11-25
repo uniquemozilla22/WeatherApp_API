@@ -9,11 +9,11 @@ const Form = (props) => {
         <HOC>
             <Container >
                 <form className="country-form row">
-                <div className="form-group col-8">
-                    <Input label="City" size="md"></Input>
+                <div className="form-group col-6">
+                    <Input label="City :" size="lg"></Input>
                 </div>
-                <div className="form-group col-4">
-                    <Input label="Country" size="md"></Input>
+                <div className="form-group col-6">
+                    <Input label="Country :" size="lg"></Input>
                 </div>
                 </form>
             </Container>

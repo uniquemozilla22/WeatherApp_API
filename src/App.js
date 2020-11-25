@@ -6,14 +6,14 @@ import Axios from 'axios'
 class App extends Component {
 
   state = {
-    city:"london,uk",
+    city:"london",
     temperature:100,
     location:'error',
 
 
   }
 
-  componentDidMount() {
+  componentDitemdMount() {
     Axios.get("https://api.openweathermap.org/data/2.5/weather?q="+this.state.city+"&appid=6b066cec1443acf9f049b9390bdf23ef").then(response =>{
       console.log(response.data)
 

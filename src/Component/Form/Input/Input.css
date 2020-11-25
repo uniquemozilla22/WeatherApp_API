@@ -1,0 +1,12 @@
+.form-control , span{
+    background-color:rgba(37, 73, 233, 0.342) !important;
+    border:none !important;
+    color:#fff !important;
+}
+.form-control{
+    border:none;
+}
+
+.form-control input:focus{
+    border-bottom:1px solid lime;
+}
