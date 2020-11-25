@@ -1,5 +1,5 @@
 import React, { Component} from 'react'
-import './App.css';
+import './App.sass';
 import Body from './Component/Body/Body';
 import Axios from 'axios'
 

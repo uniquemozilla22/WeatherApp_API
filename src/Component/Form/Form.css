@@ -1,0 +1,9 @@
+.container .country-form{
+    display: flex;
+    align-items: center;
+	justify-content: center;
+}
+
+.country-form .form-group{
+    padding:10px 20px;
+}
