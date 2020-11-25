@@ -1,17 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import HOC from '../HOC/HOC'
 import Card from '../card/Card'
 import Form from '../Form/Form'
- class Body extends Component {
-
-    render() {
+ const Body=(props)=>{
         return (
             <HOC>
                 <Form></Form>
-                <Card ></Card>
+                <Card {...props} ></Card>
             </HOC>
         )
-    }
 }
 
 
