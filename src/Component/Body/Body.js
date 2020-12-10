@@ -5,8 +5,7 @@ import Form from '../Form/Form'
  const Body=(props)=>{
         return (
             <HOC>
-                <Form></Form>
-                <Card {...props} ></Card>
+                <Form {...props}></Form>
             </HOC>
         )
 }
