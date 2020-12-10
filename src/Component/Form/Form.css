@@ -7,3 +7,6 @@
 .country-form .form-group{
     padding:10px 20px;
 }
+button{
+    display:none;
+}

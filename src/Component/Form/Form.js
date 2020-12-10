@@ -9,12 +9,24 @@ import Axios from 'axios'
 class Form extends Component {
     
   state = {
-    city:"london",
+    city:"kathmandu",
     temperature:100,
-    location:'error'
+    location:'error',
+    weather_type:""
   }
 
-  componentWillMount() {
+  componentDidMount() {
+      this.AxiosFetcher();
+  }
+
+  onChangeHandler=(e)=>{
+    this.setState({
+        ...this.state,
+        city:e.target.value,
+    })
+  }
+
+  AxiosFetcher=()=>{
     Axios.get("https://api.openweathermap.org/data/2.5/weather?q="+this.state.city+"&appid=6b066cec1443acf9f049b9390bdf23ef").then(response =>{
       console.log(response.data)
 
@@ -28,27 +40,17 @@ class Form extends Component {
         location:{
           country:response.data.sys.country,
           city:response.data.name
-        }
+        },
+        weather_type:response.data.weather[0].main
       })
     })
   }
 
+  onClickHandler = (event)=>{
+    event.preventDefault();
 
-
-  onChangeHandler=(e)=>{
-    this.setState({
-        ...this.state,
-        city:e.target.value,
-    })
-    
+    this.AxiosFetcher();
   }
-
-  onClickHandler =(event)=>{
-    event.preventDefault()
-
-  }
-
-
     render() {
 
         return (
@@ -61,11 +63,11 @@ class Form extends Component {
                     <div className="form-group col-6">
                         <Input label="Country :" size="lg"></Input>
                     </div>
-                    <button type="submit" className="" onSubmit={(event)=>this.onClickHandler(event)}></button>
+                    <button type="submit" className="" onClick={(event)=>this.onClickHandler(event)}></button>
                     </form>
                 </Container>
                 <Container>
-                <Card temperature={this.state.temperature} location={this.state.location}></Card>
+                <Card temperature={this.state.temperature} location={this.state.location} weatherType={this.state.weather_type}></Card>
                 </Container>
             </HOC>
         )
